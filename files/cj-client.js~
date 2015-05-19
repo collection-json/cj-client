@@ -429,22 +429,22 @@ function cj() {
     return false;
   }
   // low-level HTTP stuff
-  function req(url, method, body) {
-    var ajax = new XMLHttpRequest();
-    ajax.onreadystatechange = function(){rsp(ajax)};
-    ajax.open(method, url);
-    ajax.setRequestHeader("accept",g.ctype);
-    if(body && body!==null) {
-      ajax.setRequestHeader("content-type", g.ctype);
-    }
-    ajax.send(body);
-  }
-  function rsp(ajax) {
-    if(ajax.readyState===4) {
-      g.cj = JSON.parse(ajax.responseText);
-      parseCj();
-    }
-  }
+	function req(url, method, body) {
+		var ajax = new XMLHttpRequest();
+		ajax.onreadystatechange = function(){rsp(ajax)};
+		ajax.open(method, url);
+		ajax.setRequestHeader("accept",g.ctype);
+		if(body && body!==null) {
+			ajax.setRequestHeader("content-type", g.ctype);
+		}
+		ajax.send(body);
+	}
+	function rsp(ajax) {
+		if(ajax.readyState===4) {
+			g.cj = JSON.parse(ajax.responseText);
+			parseCj();
+		}
+	}
 
   // export function
   var that = {};
