@@ -157,6 +157,7 @@ function cj() {
             }
             else {
               a = d.anchor({className:"item",href:link.href,rel:link.rel,text:link.prompt});
+              a.onclick = httpGet;
               d.push(a, p);
             }
             d.push(p,dd);
