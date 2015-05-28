@@ -459,6 +459,7 @@ function cj() {
 // **************************
 function domHelp() {
 
+  // high-level helpers for Cj-DOM
   function para(args) {
     var p;
     
@@ -537,11 +538,15 @@ function domHelp() {
 
     return lnk;
   }
+  
+  // low-level helpers for DOM
   function push(source,target) {
     target.appendChild(source);
   }
 
   function tags(tag,elm) {
+    var rtn;
+    
     if(elm) {
       rtn = elm.getElementsByTagName(tag);
     }
@@ -569,7 +574,7 @@ function domHelp() {
     }
   }
 
-  // publish
+  // publish functions
   that = {};
   that.push = push;
   that.tags = tags;
@@ -587,3 +592,4 @@ function domHelp() {
   return that;
 }
 
+// *** EOD ***
